@@ -6,9 +6,38 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>book-api</title>
-    <link rel="stylesheet" href="styles/base.css">
+    <link rel="stylesheet" href="/styles/reset.css">
+    <link rel="stylesheet" href="/styles/base.css">
+    <link rel="stylesheet" href="/styles/layout.css">
+    <link rel="stylesheet" href="/styles/module.css">
 </head>
 <body>
-    <h1>Hello World</h1>
+    <header>
+        <h1>BOOK API</h1>
+        <button>button</button>
+    </header>
+    <main>
+        <div class="serach-head">
+            <h3>Search Result</h3>
+            <h4>Count <%= count %></h4>
+        </div>
+        </div>
+        <% result.forEach( book=> { %>
+            <div class="container">
+                <img src="<%= book.imge_url %>" alt="book image">
+                <h5><%= book.title %></h5>
+                <h6><%= book.author %></h6>
+                <h6>Isbn <%=book.industryIdentifiers ? book.industryIdentifiers.identifier : 'no isbn' %></h6>
+                <p><%= book.description %></p>
+                <a href="/books/<%=book.id%>">Show</a>
+            </div>
+        <% }) %>
+    </main>
+    <footer>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+    </footer>
 </body>
 </html>
